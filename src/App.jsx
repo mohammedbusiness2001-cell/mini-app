@@ -7,8 +7,8 @@ import Process from "./pages/Process";
 function App() {
   const [user, setUser] = useState(null);
 
-  function handleLogin(username) {
-    setUser(username);
+  function handleLogin(userData) {
+    setUser(userData);
   }
 
   function handleLogout() {

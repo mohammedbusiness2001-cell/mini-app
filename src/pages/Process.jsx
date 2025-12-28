@@ -28,7 +28,11 @@ function Process({ user, onLogout }) {
 
   return (
     <div>
-      <h2>Welcome {user}</h2>
+      <h2>Welcome {user.name || 'User'}</h2>
+      <div style={{ marginBottom: '20px', padding: '10px', background: '#f0f0f0', borderRadius: '5px' }}>
+        <strong>User Data:</strong>
+        <pre>{JSON.stringify(user, null, 2)}</pre>
+      </div>
       <h3>حساب المعدل السنوي</h3>
 
       {grades.map((grade, index) => (
@@ -48,8 +52,8 @@ function Process({ user, onLogout }) {
       {average !== null && (
         <div>
           <p className={status.includes("ناجح") ? "result-success" : "result-fail"}>
-  النتيجة: {status}
-</p>
+            النتيجة: {status}
+          </p>
 
         </div>
       )}
